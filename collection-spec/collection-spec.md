@@ -1,10 +1,10 @@
-# STAC Collection Specification <!-- omit in toc --> 
+# STAC Collection Specification <!-- omit in toc -->
 
 - [Overview](#overview)
 - [Collection fields](#collection-fields)
   - [Additional Field Information](#additional-field-information)
-    - [stac\_version](#stac_version)
-    - [stac\_extensions](#stac_extensions)
+    - [stac_version](#stac_version)
+    - [stac_extensions](#stac_extensions)
     - [id](#id)
     - [license](#license)
     - [summaries](#summaries)
@@ -23,22 +23,22 @@
 
 ## Overview
 
-The STAC Collection Specification defines a set of common fields to describe a group of Items that share properties and metadata. The 
-Collection Specification shares all fields with the STAC [Catalog Specification](../catalog-spec/catalog-spec.md) (with different allowed 
-values for `type` and `stac_extensions`) and adds fields to describe the whole dataset and the included set of Items. Collections 
-can have both parent Catalogs and Collections and child Items, Catalogs and Collections. 
+The STAC Collection Specification defines a set of common fields to describe a group of Items that share properties and metadata. The
+Collection Specification shares all fields with the STAC [Catalog Specification](../catalog-spec/catalog-spec.md) (with different allowed
+values for `type` and `stac_extensions`) and adds fields to describe the whole dataset and the included set of Items. Collections
+can have both parent Catalogs and Collections and child Items, Catalogs and Collections.
 
 A STAC Collection is represented in JSON format.
 Any JSON object that contains all the required fields is a valid STAC Collection and also a valid STAC Catalog.
 
-STAC Collections are compatible with the [Collection](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#example_4) JSON 
-specified in [*OGC API - Features*](https://ogcapi.ogc.org/features/), but they are extended with additional fields.  
+STAC Collections are compatible with the [Collection](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#example_4) JSON
+specified in [_OGC API - Features_](https://ogcapi.ogc.org/features/), but they are extended with additional fields.
 
 - [Examples](../examples/):
   - Sentinel 2: A basic standalone example of a [Collection](../examples/collection-only/collection.json) without Items.
   - Simple Example: A [Collection](../examples/collection.json) that links to 3 example Items.
   - Extension Collection: An additional [Collection](../examples/extensions-collection/collection.json), which is used to highlight
-  various [extension](../extensions) functionality, but serves as another example.
+    various [extension](../extensions) functionality, but serves as another example.
 - [JSON Schema](json-schema/collection.json)
 
 ## Collection fields
@@ -85,6 +85,7 @@ License(s) of the data that the STAC Collection and its children provides.
 If possible, license information should be defined at the Collection level.
 
 The license(s) can be provided as:
+
 1. [SPDX License identifier](https://spdx.org/licenses/)
 2. [SPDX License expression](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/)
 3. String with the value `other` if the license is not on the SPDX license list.
@@ -99,14 +100,14 @@ the Collection is private, and consumers have not been granted any explicit righ
 
 #### summaries
 
-Collections are *strongly recommended* to provide summaries of the values of fields that they can expect from the `properties` 
-of STAC Items contained in this Collection. This enables users to get a good sense of what the ranges and potential values of 
-different fields in the Collection are, without having to inspect a number of Items (or crawl them exhaustively to get a definitive answer). 
+Collections are _strongly recommended_ to provide summaries of the values of fields that they can expect from the `properties`
+of STAC Items contained in this Collection. This enables users to get a good sense of what the ranges and potential values of
+different fields in the Collection are, without having to inspect a number of Items (or crawl them exhaustively to get a definitive answer).
 Summaries are often used to give users a sense of the data in [Standalone Collections](#standalone-collections),
-describing the potential values even when it can't be accessed as Items. They also give clients enough information to 
+describing the potential values even when it can't be accessed as Items. They also give clients enough information to
 build tailored user interfaces for querying the data, by presenting the potential values that are available.
- Fields selected to be included in summaries should capture all the potential values of the 
- field that appear in every Item underneath the collection, including in any nested sub-Catalogs.
+Fields selected to be included in summaries should capture all the potential values of the
+field that appear in every Item underneath the collection, including in any nested sub-Catalogs.
 
 A summary for a field can be specified in three ways:
 
@@ -150,6 +151,7 @@ There are a few guidelines for using the asset construct at the Collection level
 - If possible, item-level assets are always the preferable way to expose assets.
 
 Collection-level assets can be useful in some scenarios, for example:
+
 1. Exposing additional data that applies Collection-wide and you don't want to expose it in each Item.
    This can be Collection-level metadata or a thumbnail for visualization purposes.
 2. Individual Items can't properly be distinguished for some data structures,
@@ -157,7 +159,7 @@ Collection-level assets can be useful in some scenarios, for example:
 3. Exposing assets for
    "[Standalone Collections](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#standalone-collections)".
 
-Oftentimes it is possible to model data and assets with either a Collection or an Item. In those scenarios we *recommend* to use
+Oftentimes it is possible to model data and assets with either a Collection or an Item. In those scenarios we _recommend_ to use
 Items as much as is feasible, as they designed for assets. Using Collection-level assets should only be used if there is not another
 option.
 
@@ -167,8 +169,8 @@ The object describes the spatio-temporal extents of the Collection. Both spatial
 
 | Element  | Type                                              | Description                                                           |
 | -------- | ------------------------------------------------- | --------------------------------------------------------------------- |
-| spatial  | [Spatial Extent Object](#spatial-extent-object)   | **REQUIRED.** Potential *spatial extents* covered by the Collection.  |
-| temporal | [Temporal Extent Object](#temporal-extent-object) | **REQUIRED.** Potential *temporal extents* covered by the Collection. |
+| spatial  | [Spatial Extent Object](#spatial-extent-object)   | **REQUIRED.** Potential _spatial extents_ covered by the Collection.  |
+| temporal | [Temporal Extent Object](#temporal-extent-object) | **REQUIRED.** Potential _temporal extents_ covered by the Collection. |
 
 #### Spatial Extent Object
 
@@ -176,7 +178,7 @@ The object describes the spatial extents of the Collection.
 
 | Element | Type         | Description                                                          |
 | ------- | ------------ | -------------------------------------------------------------------- |
-| bbox    | \[\[number]] | **REQUIRED.** Potential *spatial extents* covered by the Collection. |
+| bbox    | \[\[number]] | **REQUIRED.** Potential _spatial extents_ covered by the Collection. |
 
 **bbox**: Each outer array element can be a separate spatial extent describing the bounding boxes
 of the assets represented by this Collection using either 2D or 3D geometries.
@@ -188,7 +190,7 @@ It is recommended to only use multiple bounding boxes if a union of them would t
 a large uncovered area (e.g. the union of Germany and Chile).
 Thus, it doesn't make sense to provide two bounding boxes and the validation will fail in this case.
 
-The length of the inner array must be 2*n where n is the number of dimensions.
+The length of the inner array must be 2\*n where n is the number of dimensions.
 The array contains all axes of the southwesterly most extent followed by all axes of the northeasterly most extent specified in
 Longitude/Latitude or Longitude/Latitude/Elevation based on [WGS 84](http://www.opengis.net/def/crs/OGC/1.3/CRS84).
 When using 3D geometries, the elevation of the southwesterly most extent is the minimum depth/height in meters
@@ -204,7 +206,7 @@ The object describes the temporal extents of the Collection.
 
 | Element  | Type               | Description                                                           |
 | -------- | ------------------ | --------------------------------------------------------------------- |
-| interval | \[\[string\|null]] | **REQUIRED.** Potential *temporal extents* covered by the Collection. |
+| interval | \[\[string\|null]] | **REQUIRED.** Potential _temporal extents_ covered by the Collection. |
 
 **interval**: Each outer array element can be a separate temporal extent.
 The first time interval always describes the overall temporal extent of the data. All subsequent time intervals
@@ -241,10 +243,10 @@ May also include information about the final storage provider hosting the data.
 
 **roles**: The provider's role(s) can be one or more of the following elements:
 
-- *licensor*: The organization that is licensing the dataset under the license specified in the Collection's `license` field.
-- *producer*: The producer of the data is the provider that initially captured and processed the source data, e.g. ESA for Sentinel-2 data.
-- *processor*: A processor is any provider who processed data to a derived product.
-- *host*: The host is the actual provider offering the data on their storage.
+- _licensor_: The organization that is licensing the dataset under the license specified in the Collection's `license` field.
+- _producer_: The producer of the data is the provider that initially captured and processed the source data, e.g. ESA for Sentinel-2 data.
+- _processor_: A processor is any provider who processed data to a derived product.
+- _host_: The host is the actual provider offering the data on their storage.
   There should be no more than one host, specified as last element of the list.
 
 ### Link Object
@@ -272,7 +274,7 @@ This is done where there is not a clear official option, or where STAC uses an o
 
 | Type         | Description                                                                                                                                                                                                                                                        | Media Type                                           |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
-| self         | STRONGLY RECOMMENDED. *Absolute* URL to the location that the Collection file can be found online, if available. This is particularly useful when in a download package that includes metadata, so that the downstream user can know where the data has come from. | application/json                                     |
+| self         | STRONGLY RECOMMENDED. _Absolute_ URL to the location that the Collection file can be found online, if available. This is particularly useful when in a download package that includes metadata, so that the downstream user can know where the data has come from. | application/json                                     |
 | root         | URL to the root STAC entity (Catalog or Collection). Collections should include a link to their root, even if it's the root and points to itself.                                                                                                                  | application/json                                     |
 | parent       | URL to the parent STAC entity (Catalog or Collection). Non-root Collections should include a link to their parent.                                                                                                                                                 | application/json                                     |
 | child        | URL to a child STAC entity (Catalog or Collection).                                                                                                                                                                                                                | application/json                                     |
@@ -281,10 +283,10 @@ This is done where there is not a clear official option, or where STAC uses an o
 | derived_from | URL to a STAC Collection that was used as input data in the creation of this Collection. See the note in [STAC Item](../item-spec/item-spec.md#derived_from) for more info.                                                                                        | application/json                                     |
 
 A more complete list of possible `rel` types and their meaning in STAC can be found in the
-[Using Relation Types](../best-practices.md#using-relation-types) best practice. 
+[Using Relation Types](../best-practices.md#using-relation-types) best practice.
 
 **Note:** The STAC Catalog specification requires a link to at least one `item` or `child` Catalog.
-This is *not* a requirement for Collections, but *recommended*. In contrast to Catalogs,
+This is _not_ a requirement for Collections, but _recommended_. In contrast to Catalogs,
 it is **REQUIRED** that Items linked from a Collection MUST refer back to its Collection
 with the [`collection` relation type](../item-spec/item-spec.md#relation-types).
 
@@ -329,9 +331,9 @@ For an introduction to JSON Schema, see "[Learn JSON Schema](https://json-schema
 
 ## Media Type for STAC Collections
 
-A STAC Collection is a JSON file ([RFC 8259](https://tools.ietf.org/html/rfc8259)), and thus should use the 
-[`application/json`](https://tools.ietf.org/html/rfc8259#section-11) as the [Media Type](https://en.wikipedia.org/wiki/Media_type) 
-(previously known as the MIME Type). 
+A STAC Collection is a JSON file ([RFC 8259](https://tools.ietf.org/html/rfc8259)), and thus should use the
+[`application/json`](https://tools.ietf.org/html/rfc8259#section-11) as the [Media Type](https://en.wikipedia.org/wiki/Media_type)
+(previously known as the MIME Type).
 
 ## Standalone Collections
 
