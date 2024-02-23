@@ -12,21 +12,11 @@
   "license": "other",
   "extent": {
     "spatial": {
-      "bbox": [
-        [
-          -180,
-          -82.852377834669,
-          180,
-          82.819463367711
-        ]
-      ]
+      "bbox": [[-180, -82.852377834669, 180, 82.819463367711]]
     },
     "temporal": {
       "interval": [
-        [
-          "2017-04-12T02:57:21.459000Z",
-          "2021-04-22T11:30:12.767000Z"
-        ]
+        ["2017-04-12T02:57:21.459000Z", "2021-04-22T11:30:12.767000Z"]
       ]
     }
   },
@@ -52,24 +42,17 @@
   "providers": [
     {
       "name": "European Union/ESA/Copernicus",
-      "roles": [
-        "producer",
-        "licensor"
-      ],
+      "roles": ["producer", "licensor"],
       "url": "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi"
     },
     {
       "name": "AWS",
-      "roles": [
-        "host"
-      ],
+      "roles": ["host"],
       "url": "https://registry.opendata.aws/sentinel-2/"
     },
     {
       "name": "jeobrowser",
-      "roles": [
-        "processor"
-      ],
+      "roles": ["processor"],
       "url": "https://github.com/jjrom/resto"
     }
   ],

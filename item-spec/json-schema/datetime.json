@@ -5,24 +5,17 @@
   "type": "object",
   "dependencies": {
     "start_datetime": {
-      "required": [
-        "end_datetime"
-      ]
+      "required": ["end_datetime"]
     },
     "end_datetime": {
-      "required": [
-        "start_datetime"
-      ]
+      "required": ["start_datetime"]
     }
   },
   "properties": {
     "datetime": {
       "title": "Date and Time",
       "description": "The searchable date/time of the data, in UTC (Formatted in RFC 3339) ",
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "format": "date-time",
       "pattern": "(\\+00:00|Z)$"
     },

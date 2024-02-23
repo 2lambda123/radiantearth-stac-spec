@@ -54,17 +54,12 @@
         "extent": {
           "title": "Extents",
           "type": "object",
-          "required": [
-            "spatial",
-            "temporal"
-          ],
+          "required": ["spatial", "temporal"],
           "properties": {
             "spatial": {
               "title": "Spatial extent object",
               "type": "object",
-              "required": [
-                "bbox"
-              ],
+              "required": ["bbox"],
               "properties": {
                 "bbox": {
                   "title": "Spatial extents",
@@ -101,9 +96,7 @@
             "temporal": {
               "title": "Temporal extent object",
               "type": "object",
-              "required": [
-                "interval"
-              ],
+              "required": ["interval"],
               "properties": {
                 "interval": {
                   "title": "Temporal extents",
@@ -115,10 +108,7 @@
                     "minItems": 2,
                     "maxItems": 2,
                     "items": {
-                      "type": [
-                        "string",
-                        "null"
-                      ],
+                      "type": ["string", "null"],
                       "format": "date-time",
                       "pattern": "(\\+00:00|Z)$"
                     }
@@ -156,24 +146,15 @@
           {
             "title": "Range",
             "type": "object",
-            "required": [
-              "minimum",
-              "maximum"
-            ],
+            "required": ["minimum", "maximum"],
             "properties": {
               "minimum": {
                 "title": "Minimum value",
-                "type": [
-                  "number",
-                  "string"
-                ]
+                "type": ["number", "string"]
               },
               "maximum": {
                 "title": "Maximum value",
-                "type": [
-                  "number",
-                  "string"
-                ]
+                "type": ["number", "string"]
               }
             }
           },

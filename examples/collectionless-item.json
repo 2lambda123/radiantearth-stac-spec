@@ -6,36 +6,16 @@
   ],
   "type": "Feature",
   "id": "CS3-20160503_132131_08",
-  "bbox": [
-    -122.59750209,
-    37.48803556,
-    -122.2880486,
-    37.613537207
-  ],
+  "bbox": [-122.59750209, 37.48803556, -122.2880486, 37.613537207],
   "geometry": {
     "type": "Polygon",
     "coordinates": [
       [
-        [
-          -122.308150179,
-          37.488035566
-        ],
-        [
-          -122.597502109,
-          37.538869539
-        ],
-        [
-          -122.576687533,
-          37.613537207
-        ],
-        [
-          -122.2880486,
-          37.562818007
-        ],
-        [
-          -122.308150179,
-          37.488035566
-        ]
+        [-122.308150179, 37.488035566],
+        [-122.597502109, 37.538869539],
+        [-122.576687533, 37.613537207],
+        [-122.2880486, 37.562818007],
+        [-122.308150179, 37.488035566]
       ]
     ]
   },
@@ -52,17 +32,12 @@
       {
         "name": "Remote Data, Inc",
         "description": "Producers of awesome spatiotemporal assets",
-        "roles": [
-          "producer",
-          "processor"
-        ],
+        "roles": ["producer", "processor"],
         "url": "http://remotedata.it"
       }
     ],
     "platform": "cool_sat2",
-    "instruments": [
-      "cool_sensor_v1"
-    ],
+    "instruments": ["cool_sensor_v1"],
     "view:sun_elevation": 33.4,
     "gsd": 0.512,
     "cs:type": "scene",
@@ -120,9 +95,7 @@
       "href": "http://cool-sat.com/catalog/CS3-20160503_132130_04/thumbnail.png",
       "title": "Thumbnail",
       "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ]
+      "roles": ["thumbnail"]
     },
     "udm": {
       "href": "http://cool-sat.com/catalog/CS3-20160503_132130_04/UDM.tif",
@@ -132,9 +105,7 @@
       "href": "http://cool-sat.com/catalog/CS3-20160503_132130_04/extended-metadata.json",
       "title": "Extended Metadata",
       "type": "application/json",
-      "roles": [
-        "metadata"
-      ]
+      "roles": ["metadata"]
     },
     "ephemeris": {
       "href": "http://cool-sat.com/catalog/CS3-20160503_132130_04/S3-20160503_132130_04.EPH",
