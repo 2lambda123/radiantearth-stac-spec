@@ -33,6 +33,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Several typos and minor language changes
+
+### Fixed
+
+- Clarified that collection IDs should be unique across all collections in the corresponding root catalog
+- Clarified that only JSON Schema in version draft-07 is officially supported in Collection summaries, for all other versions validation may fail
 - Clarified that collection IDs should be unique across all collections in the corresponding root catalog.
 - Clarified which media types should be used for the hierarchical relation types
 
