@@ -1,5 +1,7 @@
 <!--lint disable maximum-line-length-->
+
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
@@ -56,7 +58,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - An open date range to both sides is now allowed in the Collection's temporal extents. ([#1125](https://github.com/radiantearth/stac-spec/issues/1125))
 - Catalog and Collection JSON Schemas don't have a common JSON Schema any more. ([#1122](https://github.com/radiantearth/stac-spec/pull/1122))
 
-### Removed 
+### Removed
 
 - Catalogs don't support summaries any more. ([#1122](https://github.com/radiantearth/stac-spec/pull/1122))
 
@@ -123,7 +125,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - URIs (usually found int properties like `href`, `url`) are now validated using the `iri-reference` format in JSON Schema (allows international characters in URIs) ([#953](https://github.com/radiantearth/stac-spec/pull/953))
 - Enhanced the way the spec talks about ID's to encourage more global uniqueness. ([#883](https://github.com/radiantearth/stac-spec/pull/883))
 - Clarified how collection-level asset object properties do not remove the need for item-level asset object properties in the `item-assets` extension ([#880](https://github.com/radiantearth/stac-spec/pull/880))
-- Made `summaries` to be *strongly recommended* - everyone should strive to implement them, as they are very useful. ([#985](https://github.com/radiantearth/stac-spec/pull/985))
+- Made `summaries` to be _strongly recommended_ - everyone should strive to implement them, as they are very useful. ([#985](https://github.com/radiantearth/stac-spec/pull/985))
 - Moved examples from individual directories into a single /examples folder at the root, and evolved them to be more representative. ([#955](https://github.com/radiantearth/stac-spec/pull/955))
 - Renamed "Scientific Extension" to "Scientific Citation Extension" ([#990](https://github.com/radiantearth/stac-spec/issues/990))
 - Relaxed the regular expression for DOIs in the scientific extension ([#910](https://github.com/radiantearth/stac-spec/issues/910))
@@ -142,23 +144,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [v1.0.0-beta.2] - 2020-07-08
 
 ### Added
+
 - JSON-schema file in the Point Cloud extension.
 
 ### Changed
+
 - Clarification on null geometries, making bbox not required if a null geometry is used.
 - Multiple extents (bounding boxes / intervals) are allowed per Collection
 - In the scientific extension, a link with the rel-type 'cite-as' SHOULD be used for the main publication of the dataset (the same as the one described in `sci:doi`), and not for the DOIs referenced in the `sci:publications` property.
 
 ### Removed
+
 - Validation instructions
 
 ### Fixed
+
 - Fixed several JSON Schemas
 - Fixed examples
 
 ## [v1.0.0-beta.1] - 2020-05-29
 
 ### Removed
+
 - The API portion of STAC has been split off into a [new repository: stac-api-spec](https://github.com/radiantearth/stac-api-spec) and will start being versioned and released separately than the core STAC spec.
 - proj4 string from proj extension
 - Various warnings about how the spec is very early and likely will change.
@@ -167,6 +174,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - ItemCollection removed from stac-spec core repo, will migrate to [stac-api-spec](https://github.com/radiantearth/stac-api-spec) as that is the only place it is used.
 
 ### Added
+
 - 'alternate' as a listed 'rel' type with recommended 'text/html' to communicate there is an html version.
 - Added a code of conduct based on github's template.
 - Overview document that gives a more explanatory discussion of the various parts of the spec and how they relate
@@ -180,6 +188,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - [Tiled Assets extension](https://github.com/stac-extensions/tiled-assets/blob/main/README.md), for representing data that has been split into tiles
 
 ### Changed
+
 - [Label extension](https://github.com/stac-extensions/label/blob/main/README.md) types were clarified and types in README and JSON schema were brought into alignment
 - Moved item recommendations to best practices, and added a bit more in item spec about 'search'
 - Moved `eo:gsd` from `eo` extension to core `gsd` field in Item common metadata
@@ -191,11 +200,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improved several JSON Schemas
 
 ### Fixed
+
 - Datacube extension: `cube:dimensions` was not flagged as required.
 
 ## [v0.9.0] - 2020-02-26
 
 ### Added
+
 - ItemCollection requires `stac_version` field, `stac_extensions` has also been added
 - A `description` field has been added to Item assets (also Asset definitions extension)
 - Field `mission` to [Common Metadata fields](item-spec/common-metadata.md)
@@ -209,12 +220,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
   - Added the [Item and Collection API Version extension](https://github.com/radiantearth/stac-api-spec/tree/master/extensions/version/README.md) to support versioning in the API specification
   - Run `npm run serve` or `npm run serve-ext` to quickly render development versions of the OpenAPI spec in the browser
 - [Basics](item-spec/common-metadata.md#basics) added to Common Metadata definitions with new `description` field for
-Item properties
+  Item properties
 - New fields to the `link` object to facilitate [pagination support for POST requests](https://github.com/radiantearth/stac-api-spec/tree/master/api-spec.md#paging-extension)
 - `data` role, as a suggestion for a common role for data files to be used in case data providers don't come up with their own names and semantics
 - Clarification text on HTTP verbs in STAC API
 
 ### Changed
+
 - Support for [CommonMark 0.29 instead of CommonMark 0.28](https://spec.commonmark.org/0.29/changes.html)
 - Collection field `property` and the merge ability moved to a new extension 'Commons'
 - Added field `roles` to Item assets (also Asset definitions extension), to be used similarly to Link `rel`
@@ -245,15 +257,16 @@ Item properties
   - Removed "next" from the search metadata and query parameter, added POST body and headers to the links for paging support
   - Query Extension - type restrictions on query predicates are more accurate, which may require additional implementation support
 - Item `title` definition moved from core Item fields to [Common Metadata Basics](item-spec/common-metadata.md#basics)
-fields. No change is required for STAC Items.
+  fields. No change is required for STAC Items.
 - `putFeature` can return a `PreconditionFailed` to provide more explicit information when the resource has changed in the server
 - [Sort extension](https://github.com/radiantearth/stac-api-spec/tree/master/extensions/sort) now uses "+" and "-" prefixes for GET requests to denote sort order.
 - Clarified how `/search` links must be added to `/` and changed that links to both GET and POST must be provided now that the method can be specified in links
 
 ### Removed
+
 - `version` field in STAC Collections. Use [Version Extension](https://github.com/stac-extensions/version/blob/main/README.md) instead
 - `summaries` field from Catalogs. Use Collections instead
-- Asset Types (pre-defined values for the keys of individual assets, *not* media types) in Items. Use the asset's `roles` instead
+- Asset Types (pre-defined values for the keys of individual assets, _not_ media types) in Items. Use the asset's `roles` instead
 - `license` field doesn't allow SPDX expressions any longer. Use `various` and links instead
 - Extensions:
   - `eo:platform`, `eo:instrument`, `eo:constellation` from EO extension, and `sar:platform`, `sar:instrument`, `sar:constellation` from the [SAR extension](https://github.com/stac-extensions/sar/blob/main/README.md)
@@ -283,23 +296,26 @@ fields. No change is required for STAC Items.
 ## [v0.8.1] - 2019-11-01
 
 ### Changed
+
 - Updated specification to base on OGC API - Features - Part 1: Core, v1.0.0 instead of OGC API - Features - Part 1: Core, v1.0.0-draft.2 (fka WFS3 draft 2).
 
 ### Fixed
+
 - Numerous typos, clarifications and fixes for documentation and examples.
-- Fixed STAC API definition to include STAC-related fields and examples in *OGC API - Features*-derived endpoints.
+- Fixed STAC API definition to include STAC-related fields and examples in _OGC API - Features_-derived endpoints.
 - Fixed JSON schemas for extensions: `$id` field matches file name.
 
 ## [v0.8.0] - 2019-10-11
 
 ### Changed
+
 - Updated specification to base on WFS3 draft 2 (OGC API - Features - Part 1: Core, v1.0.0-draft.2). This leads to many changes in the API and one change in STAC collections, notably:
   - The structure of the field `extent` in STAC and WFS Collections changed.
   - Query parameter `time` was renamed to `datetime` and accepts slightly different values.
   - WFS links have additional fields `hreflang` and `length`.
   - WFS Collections have additional fields `crs` and `itemType`.
   - `time` API parameter changed to `datetime`
-- The API intersects parameter now accepts a GeoJSON Geometry (any type) *instead* of a GeoJSON Feature.
+- The API intersects parameter now accepts a GeoJSON Geometry (any type) _instead_ of a GeoJSON Feature.
 - API: Clarification on `include` and `exclude` parameters in the field extension and notes on default values.
 - API: queries should contain either `bbox` or `intersects`.
 - API: Core API now has reserved parameters to prevent overlap with extensions
@@ -311,6 +327,7 @@ fields. No change is required for STAC Items.
 - Changed GeoTIFF media type from `image/vnd.stac.geotiff` to `image/tiff; application=geotiff`, changed Cloud-optimized GeoTiff media type from `image/vnd.stac.geotiff; cloud-optimized=true` to `image/tiff; application=geotiff; profile=cloud-optimized`.
 
 ### Added
+
 - **stac_version**: Each Item must specify the STAC version.
 - **stac_extensions**: Introduced this field for Items, Catalogs and Collections.
 - Property `summaries` have been added to catalogs and collections.
@@ -326,10 +343,12 @@ fields. No change is required for STAC Items.
 - [Scientific extension](https://github.com/stac-extensions/scientific/blob/main/README.md) can be used in Collections.
 
 ### Fixed
+
 - Updated language, fixed typos and examples.
 - Renamed `pc:schema` to `pc:schemas` in the Point Cloud extension.
 
 ### Changes since 0.8.0rc1
+
 - [Label extension](https://github.com/stac-extensions/label/blob/main/README.md):
   - moved label:classes to be a list of Class Objects from a single Class Object in spec markdown and json schema (matching previous example JSON).
   - moved label:overview to be a list of Overview Objects from a single Overview Object in spec markdown and json schema (matching previous example JSON).
@@ -338,12 +357,14 @@ fields. No change is required for STAC Items.
 ## [v0.7.0] - 2019-05-06
 
 ### Fixed
+
 - Updated language / fixed typos
 - Moved static vs dynamic discussion text to catalog best practices document
 - Moved hosting of interactive api docs from swaggerhub to [stacspec.org](http://stacspec.org)
 - JSON Schemas are now all following the latest JSON Schema version, draft 07.
 
 ### Changed
+
 - No longer require an absolute self link for Items, Collections and Catalogs.
 - Reorganized api-spec, added extensions folder to hold API extensions
 - Change the fields parameter in the API to allow filtering on any property.
@@ -351,6 +372,7 @@ fields. No change is required for STAC Items.
 - Commons extension ability to 'merge' properties is now in the core specification
 
 ### Added
+
 - Catalog best practices document, including recommendations for catalog layouts, html, and self-contained catalogs.
 - `page` parameter for STAC API
 - Optional `collection` property field in Items (previously part of the Commons extension)
@@ -359,22 +381,26 @@ fields. No change is required for STAC Items.
 - Added new filter parameters `ids` and `collections` to `/stac/search/`
 
 ### Removed
+
 - Removed the field `sar:off_nadir` from the SAR extension
 - JavaScript-based validation
 
 ## [v0.6.2] - 2019-03-01
 
 ### Fixed
+
 - Fixed several examples and typos, improved descriptions
 - Strictly checking the STAC version numbers in the JSON schemas
 - Added missing required fields in Item JSON schema
 - Changed `id` to `$id` in JSON schemas (draft-06 compatibility)
 
 ### Changed
+
 - Extensions require examples and a JSON schema to get to the maturity level 'Pilot'
 - Updated ISERV implementation
 
 ### Added
+
 - Checksum extension
 - Data Cube extension
 - Point Cloud extension
@@ -383,6 +409,7 @@ fields. No change is required for STAC Items.
 ## [v0.6.1] - 2019-01-25
 
 ### Fixed
+
 - Added `null` as potential data type to `eo:epsg` in the EO extension.
 - Fixed several examples and typos.
 - Updated JSON Schema versions for uniformity
@@ -392,10 +419,12 @@ fields. No change is required for STAC Items.
 ## [v0.6.0] - 2018-11-06
 
 ### Fixed
+
 - Reorganized and cleaned up repository.
 - Fixed examples throughout.
 
 ### Added
+
 - **Changelog**: This changelog added.
 - **Collections added**: Collections are a type of Catalog with additional fields, such as provider and license. Items must belong to a single Collection.
 - **Extension maturity**: Protocol for providing maturity classification for extensions based on stability and implementations.
@@ -411,6 +440,7 @@ fields. No change is required for STAC Items.
 - **Development Process**: See process.md for information on the STAC development process.
 
 ### Changed
+
 - **API**: Main catalog endpoint at `/stac`, search endpoint now at `/stac/search`.
 - **eo:bands**: The `eo:bands` field is now an array rather than a dictionary, and has been moved inside of `properties` in a STAC Item.
 - **Catalog fields**: Catalogs have a smaller number of basic fields: `id`, `stac_version`, `title` (optional), `description`, and `links`. The new Collections type contains additional fields.
@@ -420,6 +450,7 @@ fields. No change is required for STAC Items.
 - **assets**: Fields changed names: `name` to `title` and `mime_type` to `type`.
 
 ### Removed
+
 - **provider**: Provider field in Items got removed. Use Collections or the Single Item extension instead.
 - **license**: License field in Items got removed. Use Collections or the Single Item extension instead.
 
@@ -479,25 +510,25 @@ Highlights include:
 
 See the [milestone 0.4.0 in the issue tracker](https://github.com/radiantearth/stac-spec/milestone/3) for the complete lists of improvements.
 
-Thanks @hgs-msmith, @matthewhanson, @hgs-trutherford, @rouault, @joshfix, @alkamin, @hemphillda, @jeffnaus  and @fredliporace for contributing to the spec directly, and to [everyone](https://github.com/opengeospatial/wfs3hackathon/blob/master/notes/introductions.md#participants) who participated in the [Ft Collins sprint](https://github.com/radiantearth/community-sprints/tree/master/03072018-ft-collins-co) and brought great ideas.
+Thanks @hgs-msmith, @matthewhanson, @hgs-trutherford, @rouault, @joshfix, @alkamin, @hemphillda, @jeffnaus and @fredliporace for contributing to the spec directly, and to [everyone](https://github.com/opengeospatial/wfs3hackathon/blob/master/notes/introductions.md#participants) who participated in the [Ft Collins sprint](https://github.com/radiantearth/community-sprints/tree/master/03072018-ft-collins-co) and brought great ideas.
 
-[Unreleased]: <https://github.com/radiantearth/stac-spec/compare/master...dev>
-[v1.0.0]: <https://github.com/radiantearth/stac-spec/compare/v1.0.0-rc.4..v1.0.0>
-[v1.0.0-rc.4]: <https://github.com/radiantearth/stac-spec/compare/v1.0.0-rc.3..v1.0.0-rc.4>
-[v1.0.0-rc.3]: <https://github.com/radiantearth/stac-spec/compare/v1.0.0-rc.2..v1.0.0-rc.3>
-[v1.0.0-rc.2]: <https://github.com/radiantearth/stac-spec/compare/v1.0.0-rc.1..v1.0.0-rc.2>
-[v1.0.0-rc.1]: <https://github.com/radiantearth/stac-spec/compare/v1.0.0-beta.2..v1.0.0-rc.1>
-[v1.0.0-beta.2]: <https://github.com/radiantearth/stac-spec/compare/v1.0.0-beta.1..v1.0.0-beta.2>
-[v1.0.0-beta.1]: <https://github.com/radiantearth/stac-spec/compare/v0.9.0...v1.0.0-beta.1>
-[v0.9.0]: <https://github.com/radiantearth/stac-spec/compare/v0.8.1...v0.9.0>
-[v0.8.1]: <https://github.com/radiantearth/stac-spec/compare/v0.8.0...v0.8.1>
-[v0.8.0]: <https://github.com/radiantearth/stac-spec/compare/v0.7.0...v0.8.0>
-[v0.7.0]: <https://github.com/radiantearth/stac-spec/compare/v0.6.2...v0.7.0>
-[v0.6.2]: <https://github.com/radiantearth/stac-spec/compare/v0.6.1...v0.6.2>
-[v0.6.1]: <https://github.com/radiantearth/stac-spec/compare/v0.6.0...v0.6.1>
-[v0.6.0]: <https://github.com/radiantearth/stac-spec/compare/v0.5.2...v0.6.0>
-[v0.5.2]: <https://github.com/radiantearth/stac-spec/compare/v0.5.1...v0.5.2>
-[v0.5.1]: <https://github.com/radiantearth/stac-spec/compare/v0.5.0...v0.5.1>
-[v0.5.0]: <https://github.com/radiantearth/stac-spec/compare/v0.4.1...v0.5.0>
-[v0.4.1]: <https://github.com/radiantearth/stac-spec/compare/v0.4.0...v0.4.1>
-[v0.4.0]: <https://github.com/radiantearth/stac-spec/tree/v0.4.0>
+[Unreleased]: https://github.com/radiantearth/stac-spec/compare/master...dev
+[v1.0.0]: https://github.com/radiantearth/stac-spec/compare/v1.0.0-rc.4..v1.0.0
+[v1.0.0-rc.4]: https://github.com/radiantearth/stac-spec/compare/v1.0.0-rc.3..v1.0.0-rc.4
+[v1.0.0-rc.3]: https://github.com/radiantearth/stac-spec/compare/v1.0.0-rc.2..v1.0.0-rc.3
+[v1.0.0-rc.2]: https://github.com/radiantearth/stac-spec/compare/v1.0.0-rc.1..v1.0.0-rc.2
+[v1.0.0-rc.1]: https://github.com/radiantearth/stac-spec/compare/v1.0.0-beta.2..v1.0.0-rc.1
+[v1.0.0-beta.2]: https://github.com/radiantearth/stac-spec/compare/v1.0.0-beta.1..v1.0.0-beta.2
+[v1.0.0-beta.1]: https://github.com/radiantearth/stac-spec/compare/v0.9.0...v1.0.0-beta.1
+[v0.9.0]: https://github.com/radiantearth/stac-spec/compare/v0.8.1...v0.9.0
+[v0.8.1]: https://github.com/radiantearth/stac-spec/compare/v0.8.0...v0.8.1
+[v0.8.0]: https://github.com/radiantearth/stac-spec/compare/v0.7.0...v0.8.0
+[v0.7.0]: https://github.com/radiantearth/stac-spec/compare/v0.6.2...v0.7.0
+[v0.6.2]: https://github.com/radiantearth/stac-spec/compare/v0.6.1...v0.6.2
+[v0.6.1]: https://github.com/radiantearth/stac-spec/compare/v0.6.0...v0.6.1
+[v0.6.0]: https://github.com/radiantearth/stac-spec/compare/v0.5.2...v0.6.0
+[v0.5.2]: https://github.com/radiantearth/stac-spec/compare/v0.5.1...v0.5.2
+[v0.5.1]: https://github.com/radiantearth/stac-spec/compare/v0.5.0...v0.5.1
+[v0.5.0]: https://github.com/radiantearth/stac-spec/compare/v0.4.1...v0.5.0
+[v0.4.1]: https://github.com/radiantearth/stac-spec/compare/v0.4.0...v0.4.1
+[v0.4.0]: https://github.com/radiantearth/stac-spec/tree/v0.4.0
