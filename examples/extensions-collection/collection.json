@@ -2,7 +2,7 @@
   "id": "extensions-collection",
   "type": "Collection",
   "stac_version": "1.0.0",
-  "description": "A heterogenous collection containing deeper examples of various extensions",
+  "description": "A heterogeneous collection containing deeper examples of various extensions",
   "links": [
     {
       "rel": "parent",
@@ -29,40 +29,23 @@
   ],
   "stac_extensions": [],
   "title": "Collection of Extension Items",
-  "keywords": [
-    "examples",
-    "sar",
-    "projection"
-  ],
+  "keywords": ["examples", "sar", "projection"],
   "providers": [
     {
       "name": "Remote Data, Inc.",
-      "roles": [
-        "producer",
-        "licensor"
-      ],
+      "roles": ["producer", "licensor"],
       "url": "https://remotedata.io"
     }
   ],
   "extent": {
     "spatial": {
-      "bbox": [
-        [
-          -180,
-          -56,
-          180,
-          83
-        ]
-      ]
+      "bbox": [[-180, -56, 180, 83]]
     },
     "temporal": {
       "interval": [
-        [
-          "2009-05-20T02:40:01.042784Z",
-          "2018-11-03T23:59:55.112875Z"
-        ]
+        ["2009-05-20T02:40:01.042784Z", "2018-11-03T23:59:55.112875Z"]
       ]
     }
   },
-  "license": "PDDL-1.0"
+  "license": "other"
 }
