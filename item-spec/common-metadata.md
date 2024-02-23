@@ -22,8 +22,8 @@ or [Collection Asset](../collection-spec/collection-spec.md#asset-object).
       - [mission](#mission)
       - [gsd](#gsd)
 
-Various *examples* are available in the folder [`examples`](../examples/).
-*JSON Schemas* can be found in the folder [`json-schema`](json-schema/).
+Various _examples_ are available in the folder [`examples`](../examples/).
+_JSON Schemas_ can be found in the folder [`json-schema`](json-schema/).
 
 Implementation of any of the fields is not required, unless explicitly required by a specification using the field.
 For example, `datetime` is required in STAC Items.
@@ -60,8 +60,8 @@ If those fields are available in a Collection, in a Catalog (both top-level), or
 the fields refer the metadata (e.g., when the STAC metadata was created).
 Having those fields in the Assets or Links, they refer to the actual data linked to (e.g., when the asset was created).
 
-***NOTE:** There are more date and time related fields available in the
-[Timestamps extension](https://github.com/stac-extensions/timestamps)*.
+**\*NOTE:** There are more date and time related fields available in the
+[Timestamps extension](https://github.com/stac-extensions/timestamps)\*.
 
 ### Date and Time Range
 
@@ -140,10 +140,10 @@ May also include information about the final storage provider hosting the data.
 
 The provider's role(s) can be one or more of the following elements:
 
-- *licensor*: The organization that is licensing the dataset under the license specified in the Collection's `license` field.
-- *producer*: The producer of the data is the provider that initially captured and processed the source data, e.g. ESA for Sentinel-2 data.
-- *processor*: A processor is any provider who processed data to a derived product.
-- *host*: The host is the actual provider offering the data on their storage.
+- _licensor_: The organization that is licensing the dataset under the license specified in the Collection's `license` field.
+- _producer_: The producer of the data is the provider that initially captured and processed the source data, e.g. ESA for Sentinel-2 data.
+- _processor_: A processor is any provider who processed data to a derived product.
+- _host_: The host is the actual provider offering the data on their storage.
   There should be no more than one host, specified as the last element of the provider list.
 
 ## Instrument
@@ -186,7 +186,7 @@ radiometric characteristics. This field allows users to search for related data 
 specific platform the data came from, for example, from either of the Sentinel-2 satellites. Examples include `landsat-8`
 (Landsat-8, a constellation consisting of a single platform), `sentinel-2`
 ([Sentinel-2](https://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-2/Satellite_constellation)),
-`rapideye` (operated by Planet Labs), and `modis` (NASA EOS satellites Aqua and Terra).  In the case of `modis`, this
+`rapideye` (operated by Planet Labs), and `modis` (NASA EOS satellites Aqua and Terra). In the case of `modis`, this
 is technically referring to a pair of sensors on two different satellites, whose data is combined into a series of
 related products. Additionally, the Aqua satellite is technically part of the A-Train constellation and Terra is not
 part of a constellation, but these are combined to form the logical collection referred to as MODIS.
